@@ -132,6 +132,8 @@ app.post("/delete",function(req,res){
   }
 });
 
-app.listen(3000, function(){ 
-    console.log("Port 3000 is fine.");
-});
+mongoose.connect("mongodb+srv://visheshmeena:testing5522@cluster1.n7u1dky.mongodb.net/todolistDB").then(
+  app.listen(process.env.PORT || 3000, function() {
+    console.log("Server started on port 3000");
+  })
+);
